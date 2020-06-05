@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Hoi Ming TSUI" />
+    <meta name="description" content="a cake shop" />
+    <meta
+      name="keywords"
+      content="onlineshop, free, cake, 2018, cityu, cs2204"
+    />
+    <title>A cake shop</title>
+    <link rel="stylesheet" href="../css/core.css" type="text/css" media="all" />
+    <script src="../scripts/cakemenu.js" type="text/javascript"></script>
+  </head>
+
+  <body onload="fillval();">
+    <header>
+      <div id="header">
+        <img class="logo" src="../images/logo.png" alt="logo" />
+        <h1 class="title">CITY'S CAKE</h1>
+      </div>
+      <div id="navigation">
+        <nav>
+          <button class="dropbtn">
+            <img src="../images/viewlist.png" alt="viewlist" />
+          </button>
+          <div class="dropdown-content">
+            <a href="index.html">Home</a> <a href="order.html">Order</a>
+            <a href="design.html" target="_blank">About Us</a>
+            <a href="#">Terms of Use</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div id="main">
+      <form id="printform" action="print.html" method="get">
+        <div id="orderForm">
+          <h3>Order Information</h3>
+          <label
+            >Order(Tel.)No. <input type="number" id="tel" name="tel" />
+          </label>
+          <label
+            >Pick Up Date <input type="date" id="date" name="date" />
+          </label>
+          <br />
+          <label
+            >Delivery
+            <input type="radio" value="delivery" name="shippingmethod" />
+          </label>
+          <label
+            >Pick Up <input type="radio" value="pickup" name="shippingmethod" />
+          </label>
+        </div>
+        <div id="menu"><!-- amount of imgs depending cakemenu.js --></div>
+        <div id="orderInfo">
+          <table id="table">
+            <caption id="orderNo">
+              Order No.
+            </caption>
+            <thead>
+              <tr>
+                <th>Cake Name</th>
+                <th>Qty</th>
+              </tr>
+            </thead>
+            <tbody id="orderingTable"></tbody>
+            <tfoot>
+              <tr>
+                <td>Total</td>
+                <td id="orderingFoot">0</td>
+              </tr>
+            </tfoot>
+          </table>
+          <input
+            type="submit"
+            id="printInvoice"
+            name="Print Invoice"
+            value="Print Invoice"
+            onclick="GetCellValues();"
+          />
+        </div>
+      </form>
+    </div>
+    <div class="popup">
+      <p>This is the message</p>
+      <div class="text-right"></div>
+    </div>
+    <div id="footer">
+      <footer>
+        <p>
+          &copy;CityU 2018 sources of images and text from Wikipedia & courtesy
+          of all free-download.com
+        </p>
+        <a href="index.html">Home</a> <a href="order.html">Order</a>
+        <a href="design.html" target="_blank">About Us</a>
+        <a href="#">Terms of Use</a>
+      </footer>
+    </div>
+    <script src="../scripts/order.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+/* Layout design */
+body {
+    font: 1em Avenir;
+    letter-spacing: normal;
+    text-align: left;
+    text-decoration: none;
+    background-color: beige;
+    color: brown;
+}
+.title {
+    font: 1.5em "brush script mt";
+    font-weight: bold;
+    color: brown;
+    letter-spacing: .3em;
+    line-height: 2.4;
+    position: relative;
+    text-align: center;
+    bottom: 5em;
+    transform: rotate(-30deg);
+    z-index: 9;
+}
+#header {
+    text-align: center;
+    border-radius: 6px;
+    background-color: beige;
+    box-shadow: 0px 2px 10px 5px  rgba(0,0,0,0.3);
+    height: 160px;
+    width: 99%;
+    min-width: 500px;
+    position: fixed;
+}
+#navigation {
+    position: fixed;
+    top: -10px;
+    margin: 1px;
+    padding-top: 20px;
+    z-index: 10;
+}
+#main {
+    padding-top: 170px;
+    clear: both;
+    overflow: auto;
+}
+#footer {
+    clear: both;
+    border: 1px solid #2B2529;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px 5px  rgba(0,0,0,0.3);
+    text-align: center;
+}
+/* orderform/layout design */
+fieldset {
+    border: 2px dashed #C68F5F;
+    border-radius: 6px;
+}
+legend {
+    font: 2em "copperplate";
+    background-color: saddlebrown;
+    color: beige;
+}
+#orderForm {
+    text-align: center;
+    display: block;
+}
+/* Inputs design */
+input {
+    background-color: beige;
+    color: brown;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    outline: 1px;
+    width: 100%;
+}
+input[type=submit] {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    background-color: beige;
+    color: brown;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=reset] {
+    background-color: beige;
+    color: brown;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+input[type=submit]:hover {
+    color: beige;
+    font-weight: bold;
+    background-color:brown;
+}
+input[type=reset]:hover {
+    color: beige;
+    font-weight: bold;
+    background-color: brown;
+}
+input[type=radio] {
+    text-align: center;
+}
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+/* Navigation design with dropdown menu */
+nav {
+    z-index: 10;
+    position: relative;
+    display: inline-block;
+}
+nav:hover .dropdown-content {
+    display: block;
+}
+nav:hover .dropbtn {
+    background-color: beige;
+}
+.dropbtn {
+    background-color: beige;
+    color: brown;
+    padding: 50px;
+    font-size: 16px;
+    border: none;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: beige;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 2px 10px 5px  rgba(0,0,0,0.3);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: brown;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    color: beige;
+    background-color: brown;
+}
+/* Table design */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid brown;
+    padding: 0.5rem;
+    text-align: center;
+}
+table tr:nth-child(odd) {
+    background: #E3B387;
+}
+table tr:nth-child(even) {
+    background: #FAE0C7;
+}
+thead, tfoot {
+    font: 1.3em "Hoefler Text";
+    font-weight: bold;
+}
+tfoot tr :hover {
+    color: beige;
+    background-color: brown;
+}
+/* img/videos/logo design */
+.img {
+    padding: 15px;
+    width: 352px;
+    height: auto;
+}
+video {
+    width: 100%;
+    height: auto;
+}
+.logo {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: auto;
+    z-index: 10;
+}
+.viewlist {
+    height: auto;
+    
+}
+/* cake items/menu */
+#cakename {
+    text-align: center;
+    font: 2.5em "papyrus";
+}
+#cakeInfo {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin-top: 35px;
+    margin-bottom: 50px;
+    border: 1px dashed;
+    border-radius: 2.5em;
+}
+#cakeInfo:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: 0px 2px 10px 10px  rgba(0,0,0,0.3);
+}
+#BcakeInfo {
+    margin-left: 52%;
+}
+#menu {
+    display: table;
+    margin: auto;
+}
+#menu { 
+    display: grid;
+    margin: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    justify-items: center;
+}
+#menu img {
+    border: 1px dashed ;
+    border-radius: 2.5em;
+    max-width: 100%;
+}
+#menu img:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: 0px 2px 10px 10px  rgba(0,0,0,0.3);
+    z-index: 1;
+}
