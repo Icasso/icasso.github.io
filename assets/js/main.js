@@ -1,105 +1,95 @@
 /*
-	Prologue by HTML5 UP
+	Future Imperfect by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function ($) {
-  var $window = $(window),
-    $body = $("body"),
-    $nav = $("#nav");
+(function($) {
 
-  // Breakpoints.
-  breakpoints({
-    wide: ["961px", "1880px"],
-    normal: ["961px", "1620px"],
-    narrow: ["961px", "1320px"],
-    narrower: ["737px", "960px"],
-    mobile: [null, "736px"],
-  });
+	var	$window = $(window),
+		$body = $('body'),
+		$menu = $('#menu'),
+		$sidebar = $('#sidebar'),
+		$main = $('#main');
 
-  // Play initial animations on page load.
-  $window.on("load", function () {
-    window.setTimeout(function () {
-      $body.removeClass("is-preload");
-    }, 100);
-  });
+	// Breakpoints.
+		breakpoints({
+			xlarge:   [ '1281px',  '1680px' ],
+			large:    [ '981px',   '1280px' ],
+			medium:   [ '737px',   '980px'  ],
+			small:    [ '481px',   '736px'  ],
+			xsmall:   [ null,      '480px'  ]
+		});
 
-  // Nav.
-  var $nav_a = $nav.find("a");
+	// Play initial animations on page load.
+		$window.on('load', function() {
+			window.setTimeout(function() {
+				$body.removeClass('is-preload');
+			}, 100);
+		});
 
-  $nav_a
-    .addClass("scrolly")
-    .on("click", function (e) {
-      var $this = $(this);
+	// Menu.
+		$menu
+			.appendTo($body)
+			.panel({
+				delay: 500,
+				hideOnClick: true,
+				hideOnSwipe: true,
+				resetScroll: true,
+				resetForms: true,
+				side: 'right',
+				target: $body,
+				visibleClass: 'is-menu-visible'
+			});
 
-      // External link? Bail.
-      if ($this.attr("href").charAt(0) != "#") return;
+	// Search (header).
+		var $search = $('#search'),
+			$search_input = $search.find('input');
 
-      // Prevent default.
-      e.preventDefault();
+		$body
+			.on('click', '[href="#search"]', function(event) {
 
-      // Deactivate all links.
-      $nav_a.removeClass("active");
+				event.preventDefault();
 
-      // Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-      $this.addClass("active").addClass("active-locked");
-    })
-    .each(function () {
-      var $this = $(this),
-        id = $this.attr("href"),
-        $section = $(id);
+				// Not visible?
+					if (!$search.hasClass('visible')) {
 
-      // No section for this link? Bail.
-      if ($section.length < 1) return;
+						// Reset form.
+							$search[0].reset();
 
-      // Scrollex.
-      $section.scrollex({
-        mode: "middle",
-        top: "-10vh",
-        bottom: "-10vh",
-        initialize: function () {
-          // Deactivate section.
-          $section.addClass("inactive");
-        },
-        enter: function () {
-          // Activate section.
-          $section.removeClass("inactive");
+						// Show.
+							$search.addClass('visible');
 
-          // No locked links? Deactivate all links and activate this section's one.
-          if ($nav_a.filter(".active-locked").length == 0) {
-            $nav_a.removeClass("active");
-            $this.addClass("active");
-          }
+						// Focus input.
+							$search_input.focus();
 
-          // Otherwise, if this section's link is the one that's locked, unlock it.
-          else if ($this.hasClass("active-locked"))
-            $this.removeClass("active-locked");
-        },
-      });
-    });
+					}
 
-  // Scrolly.
-  $(".scrolly").scrolly();
+			});
 
-  // Header (narrower + mobile).
+		$search_input
+			.on('keydown', function(event) {
 
-  // Toggle.
-  $(
-    '<div id="headerToggle">' +
-      '<a href="#header" class="toggle"></a>' +
-      "</div>"
-  ).appendTo($body);
+				if (event.keyCode == 27)
+					$search_input.blur();
 
-  // Header.
-  $("#header").panel({
-    delay: 500,
-    hideOnClick: true,
-    hideOnSwipe: true,
-    resetScroll: true,
-    resetForms: true,
-    side: "left",
-    target: $body,
-    visibleClass: "header-visible",
-  });
+			})
+			.on('blur', function() {
+				window.setTimeout(function() {
+					$search.removeClass('visible');
+				}, 100);
+			});
+
+	// Intro.
+		var $intro = $('#intro');
+
+		// Move to main on <=large, back to sidebar on >large.
+			breakpoints.on('<=large', function() {
+				$intro.prependTo($main);
+			});
+
+			breakpoints.on('>large', function() {
+				$intro.prependTo($sidebar);
+			});
+
 })(jQuery);
