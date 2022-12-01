@@ -6,4 +6,4 @@ enabled = false
 
 [[analyzers]]
 name = "test-coverage"
-enabled = true
+enabled = false
