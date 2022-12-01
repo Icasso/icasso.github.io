@@ -1,138 +1,163 @@
-@media screen{
-body {
-    font: 1em Avenir;
-    letter-spacing: normal;
-    text-align: left;
-    text-decoration: none;
-    background-color: beige;
-    color: brown;
+@media screen {
+    body {
+        font: 1em Avenir;
+        letter-spacing: normal;
+        text-align: left;
+        text-decoration: none;
+        background-color: beige;
+        color: brown;
+    }
+
+    .title {
+        font: 1.5em "brush script mt";
+        font-weight: bold;
+        color: brown;
+        letter-spacing: .3em;
+        line-height: 2.4;
+        position: relative;
+        text-align: center;
+        bottom: 5em;
+        transform: rotate(-30deg);
+        z-index: 1;
+    }
+
+    input[type=radio] {
+        text-align: center;
+    }
+
+    label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+    }
+
+    nav {
+        z-index: 10;
+        position: relative;
+        display: inline-block;
+    }
+
+    nav:hover .dropdown-content {
+        display: block;
+    }
+
+    nav:hover .dropbtn {
+        background-color: beige;
+    }
+
+    table {
+        margin-top: 10px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: 1px solid brown;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    table tr:nth-child(odd) {
+        background: #E3B387;
+    }
+
+    table tr:nth-child(even) {
+        background: #FAE0C7;
+    }
+
+    thead, tfoot {
+        font: 1.3em "Hoefler Text";
+        font-weight: bold;
+    }
+
+    tfoot tr :hover {
+        color: beige;
+        background-color: brown;
+    }
+
+    .logo {
+        width: 150px;
+        height: auto;
+        display: block;
+        margin: auto;
+        z-index: -1;
+    }
+
+    .dropbtn {
+        background-color: beige;
+        color: brown;
+        padding: 50px;
+        font-size: 16px;
+        border: none;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: beige;
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: brown;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        color: beige;
+        background-color: brown;
+    }
+
+    #header {
+        text-align: center;
+        border-radius: 6px;
+        background-color: beige;
+        box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.3);
+        height: 160px;
+        width: 100%;
+        min-width: 500px;
+        position: fixed;
+    }
+
+    #navigation {
+        position: fixed;
+        top: -10px;
+        margin: 1px;
+        padding-top: 20px;
+        z-index: 50;
+    }
+
+    #main {
+        padding-top: 170px;
+        clear: both;
+        overflow: auto;
+    }
+
+    #footer {
+        clear: both;
+        border: 1px solid #2B2529;
+        border-radius: 5px;
+        box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+
+    #invoice {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    /* WHEN PRINTING << */
 }
-.title {
-    font: 1.5em "brush script mt";
-    font-weight: bold;
-    color: brown;
-    letter-spacing: .3em;
-    line-height: 2.4;
-    position: relative;
-    text-align: center;
-    bottom: 5em;
-    transform: rotate(-30deg);
-    z-index: 1;
-}
-input[type=radio] {
-    text-align: center;
-}
-label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-}
-nav {
-    z-index: 10;
-    position: relative;
-    display: inline-block;
-}
-nav:hover .dropdown-content {
-    display: block;
-}
-nav:hover .dropbtn {
-    background-color: beige;
-}
-table {
-    margin-top: 10px; 
-    width: 100%;
-    border-collapse: collapse;
-}
-td, th {
-    border: 1px solid brown;
-    padding: 0.5rem;
-    text-align: center;
-}
-table tr:nth-child(odd) {
-    background: #E3B387;
-}
-table tr:nth-child(even) {
-    background: #FAE0C7;
-}
-thead, tfoot {
-    font: 1.3em "Hoefler Text";
-    font-weight: bold;
-}
-tfoot tr :hover {
-    color: beige;
-    background-color: brown;
-}
-.logo {
-    width: 150px;
-    height: auto;
-    display: block;
-    margin: auto;
-    z-index: -1;
-}
-.dropbtn {
-    background-color: beige;
-    color: brown;
-    padding: 50px;
-    font-size: 16px;
-    border: none;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: beige;
-    width: 100%;
-    overflow: auto;
-    box-shadow: 0px 2px 10px 5px  rgba(0,0,0,0.3);
-    z-index: 1;
-}
-.dropdown-content a {
-    color: brown;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-.dropdown-content a:hover {
-    color: beige;
-    background-color: brown;
-}
-#header {
-    text-align: center;
-    border-radius: 6px;
-    background-color: beige;
-    box-shadow: 0px 2px 10px 5px  rgba(0,0,0,0.3);
-    height: 160px;
-    width: 100%;
-    min-width: 500px;
-    position: fixed;
-}
-#navigation {
-    position: fixed;
-    top: -10px;
-    margin: 1px;
-    padding-top: 20px;
-    z-index: 50;
-}
-#main {
-    padding-top: 170px;
-    clear: both;
-    overflow: auto;
-}
-#footer {
-    clear: both;
-    border: 1px solid #2B2529;
-    border-radius: 5px;
-    box-shadow: 0px 2px 10px 5px  rgba(0,0,0,0.3);
-    text-align: center;
-}
-#invoice {
-    text-align: center;
-    margin-bottom: 50px;
-}
-/* WHEN PRINTING << */
-}
+
 @media print {
     #navigation, #footer, title, date {
         display: none;
     }
+
     .title {
         font: 1.3em "brush script mt";
         font-weight: bold;
@@ -145,44 +170,52 @@ tfoot tr :hover {
         transform: rotate(-30deg);
         z-index: 1;
     }
+
     .logo {
-            width: 100px;
-            height: auto;
-            display: block;
-            margin: auto;
-            z-index: -1;
+        width: 100px;
+        height: auto;
+        display: block;
+        margin: auto;
+        z-index: -1;
     }
+
     #header {
         text-align: center;
         border-radius: 6px;
         background-color: white;
         height: 160px;
         width: 100%;
-        
+
     }
+
     table {
         margin: auto;
-        margin-top: 0px; 
+        margin-top: 0px;
         border-collapse: collapse;
         margin-bottom: 15px;
         margin-left: 15px;
         margin-right: 15px;
     }
+
     td, th {
         border: 1px solid;
         padding: 0.5rem;
         text-align: center;
     }
+
     thead, tfoot {
         font: 1.3em "avenir";
         font-weight: bold;
     }
+
     table tr:nth-child(odd) {
         background-color: #464646;
     }
+
     table tr:nth-child(even) {
         background-color: #7F7E7E;
     }
+
     #invoice {
         padding: 15px;
         text-align: center;
@@ -190,6 +223,7 @@ tfoot tr :hover {
         width: 50%;
         margin: auto;
     }
+
     #clearbutton {
         display: none;
     }
@@ -204,9 +238,11 @@ tfoot tr :hover {
     border-radius: 4px;
     cursor: pointer;
 }
+
 #clearbutton:hover {
     color: beige;
     font-weight: bold;
     background-color: brown;
 }
+
 /* new */
